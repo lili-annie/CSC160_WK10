@@ -86,12 +86,15 @@ void writeImage(vector<vector<double>> data) {
 /*
   min lat = 36.69578069273795
   min lon = -110.07023810278962
+  max lat = 41.49181240222188
+  max lon = -101.27628856757693
 */
 
 /*STUDENT: write a function that will take a lat/lon as the
            input and find the snow depth value for that lat/lon
            and return it
 */
+
 
 int main(){
 
