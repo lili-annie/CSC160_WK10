@@ -29,11 +29,8 @@ double parseDouble(string value) {
   double val = stod(value, &sz);
   return val;
 }
-
-
-int main(){
-
-  //open file stream that reads this file (already in our replit)
+vector<vector<double>> getData() {
+//open file stream that reads this file (already in our replit)
   ifstream str("snod.csv");
 
   //data will go here
@@ -58,9 +55,11 @@ int main(){
     }
     data.push_back(rowValues);
   }
+  return data;
+}
 
-
-   FILE *imageFile;
+void writeImage(vector<vector<double>> data) {
+  FILE *imageFile;
    int x,y,pixel,height=data.size(),width=data[0].size();
 
    imageFile=fopen("image.pgm","wb");
@@ -82,4 +81,24 @@ int main(){
    }
 
    fclose(imageFile);
+}
+
+/*
+  min lat = 36.69578069273795
+  min lon = -110.07023810278962
+*/
+
+/*STUDENT: write a function that will take a lat/lon as the
+           input and find the snow depth value for that lat/lon
+           and return it
+*/
+
+int main(){
+
+  vector<vector<double>> data = getData();
+  
+  //STUDENT: lookup the lat/lon for coordinates 40.0106, -105.266
+
+  //STUDENT: lookup the lat/lon for coordinates 40.1383, -105.1287
+  
 }
