@@ -1,2 +1,2 @@
 language = "bash"
-run = "g++ -o wk10 wk10.cpp && ./wk10"
+run = "g++ -o hw10 hw10.cpp && ./hw10"
