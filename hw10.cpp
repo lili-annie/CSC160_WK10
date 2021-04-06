@@ -94,14 +94,34 @@ void writeImage(vector<vector<double>> data) {
            input and find the snow depth value for that lat/lon
            and return it
 */
-
+double getSnowDepthValue (double lat, double lon, vector<vector<double>> data) {
+  double max_lat = 41.49181240222188;
+  double max_lon = -101.27628856757693;
+  double min_lat = 36.69578069273795;
+  double min_lon = -110.07023810278962;
+  double height = data.size();
+  double width = data[0].size();
+  double delta_y = (max_lat - min_lat) / height;
+  double delta_x = (max_lon - min_lon) / width;
+  double y = (lat - min_lat) / delta_y;
+  double x = (lon - min_lon) / delta_x;
+  //int index_x = (int)x;
+  //int index_y = (int)y;
+  //cout << x <<", " << y << " -- " << index_x << ", " << index_y << endl;
+  double value = data[y][x];
+  return value;
+}
 
 int main(){
 
   vector<vector<double>> data = getData();
   
   //STUDENT: lookup the lat/lon for coordinates 40.0106, -105.266
+  double val1 = getSnowDepthValue(40.0106, -105.266, data);
+  cout << "snow depth for first point is " << val1 << endl;
 
   //STUDENT: lookup the lat/lon for coordinates 40.1383, -105.1287
-  
+  double val2 = getSnowDepthValue(40.1383, -105.1287, data);
+  cout << "snow depth for second point is " << val2 << endl;
+
 }
